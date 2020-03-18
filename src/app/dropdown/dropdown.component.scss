@@ -8,15 +8,16 @@
     border: 1px solid green;
     overflow: hidden;
     max-width: 100%;
-    display: flex;
     white-space: nowrap;
-    text-overflow: ellipsis;
     margin-left: 20px;
     align-items: center;
 
     span {
       display: inline-block;
+      overflow: hidden;
       white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: 25%;
       color: white;
       background-color: rgb(161, 79, 236);
       padding: 2px 10px;

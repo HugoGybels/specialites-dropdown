@@ -22,7 +22,7 @@ export class DropdownComponent implements OnInit {
       new Specialty(5, 'LibelleLibelleLibelle 5'),
       new Specialty(6, 'Libelle Libelle 6'),
       new Specialty(7, 'Libelle LibelleLibelleLibelle 7'),
-      new Specialty(8, 'Libelle GTIP 8'),
+      new Specialty(8, 'GRIP - CCFC Très haut'),
       new Specialty(9, 'Libelle Libelle Libelle Libelle Libelle Libelle 9'),
     ];
 

@@ -1,0 +1,19 @@
+#wrapper {
+  font-family: sans-serif;
+  display: flex;
+
+  #chips {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+
+    span {
+      color: white;
+      background-color: rgb(161, 79, 236);
+      padding: 2px 10px;
+      margin: 0 5px;
+      border-radius: 999px;
+    }
+  }
+
+}

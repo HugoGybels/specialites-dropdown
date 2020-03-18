@@ -1,6 +1,14 @@
-<p-multiSelect [options]="specialties" [(ngModel)]="selectedSpecialties" optionLabel="libelle"
- [panelStyle]="{minWidth:'100em'}"></p-multiSelect>
+<div id="wrapper">
+  <p-multiSelect  [options]="specialties"
+                  [(ngModel)]="selectedSpecialties"
+                  optionLabel="libelle"
+                  [filter]="false"
+                  [displaySelectedLabel]="false"
+                  defaultLabel="Choisissez une spécificité">
+  </p-multiSelect>
 
- <div id="chips">
-   <label *ngFor="let spe of selectedSpecialties">{{spe.libelle}}</label>
+  <div id="chips">
+    <span *ngFor="let spe of selectedSpecialties">{{spe.libelle}}</span>
+  </div>
+
  </div>

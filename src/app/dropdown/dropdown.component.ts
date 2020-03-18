@@ -5,7 +5,7 @@ import { Specialty } from '../models/specialty.model';
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
-  styleUrls: ['./dropdown.component.css']
+  styleUrls: ['./dropdown.component.scss']
 })
 export class DropdownComponent implements OnInit {
 
@@ -20,9 +20,11 @@ export class DropdownComponent implements OnInit {
       new Specialty(3, 'Libelle 3'),
       new Specialty(4, 'Libelle 4')
     ];
+
+    this.selectedSpecialties = this.specialties;
     }
 
   ngOnInit() { 
   }
 
-}
+} 

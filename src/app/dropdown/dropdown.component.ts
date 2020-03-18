@@ -11,7 +11,7 @@ export class DropdownComponent implements OnInit {
 
 
   public specialties: Specialty[];
-  public selectedSpecialty: Specialty;
+  public selectedSpecialties: Specialty[];
 
   constructor() {
     this.specialties = [

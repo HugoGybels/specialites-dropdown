@@ -1,2 +1,6 @@
-<p-multiSelect [options]="specialties" [(ngModel)]="selectedSpecialty" optionLabel="libelle"
+<p-multiSelect [options]="specialties" [(ngModel)]="selectedSpecialties" optionLabel="libelle"
  [panelStyle]="{minWidth:'100em'}"></p-multiSelect>
+
+ <div id="chips">
+   <label *ngFor="let spe of selectedSpecialties">{{spe.libelle}}</label>
+ </div>

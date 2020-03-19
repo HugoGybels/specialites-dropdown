@@ -15,7 +15,7 @@ export class DropdownComponent implements OnInit {
 
   constructor() {
     this.specialties = [
-      new Specialty(1, '1'),
+      new Specialty(1, 'Libelle Libelle 1'),
       new Specialty(2, 'Libe 2'),
       new Specialty(3, 'Libel 3'),
       new Specialty(4, 'Libelle 4'),
@@ -29,7 +29,17 @@ export class DropdownComponent implements OnInit {
     this.selectedSpecialties = this.specialties;
     }
 
-  ngOnInit() { 
-  }
+    public ngOnInit() { 
+    }
+
+    public getOverflowSpecialites(): string {
+        let tmp = this.selectedSpecialties.slice(5, this.selectedSpecialties.length);
+        let tooltipText = '';
+        if (tmp !== undefined) {
+          tmp.forEach(s => tooltipText += s.libelle);
+        }
+        return tooltipText;
+    }
+
 
 } 

@@ -9,7 +9,12 @@
   </p-multiSelect>
 
   <div id="chips">
-    <span *ngFor="let spe of selectedSpecialties; let ">{{spe.libelle}}</span>
+    <ng-container *ngFor="let spe of selectedSpecialties; let i = index">
+    <span class="chip" *ngIf="i < 5">{{spe.libelle}}</span>
+    <span class="chip tooltip" *ngIf="i===5">+{{selectedSpecialties.length - 5}}
+      <span class="tooltiptext">{{getOverflowSpecialites()}}</span>
+    </span>
+    </ng-container>
   </div>
 
  </div>

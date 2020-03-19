@@ -1,18 +1,19 @@
 #wrapper {
   font-family: sans-serif;
   display: flex;
-  border: 1px solid red;
+  //border: 1px solid red;
   padding: 5px;
 
   #chips {
-    border: 1px solid green;
+    // border: 1px solid green;
     overflow: hidden;
     max-width: 100%;
+    width: 100%;
     white-space: nowrap;
     margin-left: 20px;
     align-items: center;
 
-    span {
+    .chip {
       display: inline-block;
       overflow: hidden;
       white-space: nowrap;
@@ -23,9 +24,28 @@
       padding: 2px 10px;
       margin: 0 5px;
       border-radius: 999px;
+      position: relative;
 
-      &:last-of-type {
-        color: red;
+      &.tooltip {
+        overflow: visible;
+
+        .tooltiptext {
+          visibility: hidden;
+          background-color: black;
+          color: #fff;
+          text-align: center;
+          border-radius: 6px;
+          padding: 5px 0;
+
+          /* Position the tooltip */
+          z-index: 1;
+          position: absolute;
+          bottom: 0;
+        }
+
+        &:hover .tooltiptext {
+          visibility: visible;
+        }
       }
     }
   }

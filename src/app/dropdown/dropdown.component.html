@@ -1,9 +1,9 @@
 <h1>Chips à la main :</h1>
   
   <div id="wrapper">
-  <p-multiSelect  [options]="specialties"
-                  [(ngModel)]="selectedSpecialties"
-                  optionLabel="libelle"
+  <p-multiSelect  [options]="specialites"
+                  [(ngModel)]="specialitesSelectionnees"
+                  optionLabel="libelleLong"
                   [filter]="false"
                   [displaySelectedLabel]="false"
                   defaultLabel="Choisissez une spécificité"
@@ -11,7 +11,7 @@
   </p-multiSelect>
 
   <div id="chips">
-    <ng-container *ngFor="let spe of selectedSpecialties; let i = index">
+    <ng-container *ngFor="let spe of specialitesSelectionnees; let i = index">
     <span class="chip" *ngIf="i < NOMBRE_CHIPS_AFFICHEES">{{spe.libelle}}</span>
     <span class="chip tooltip" *ngIf="i===NOMBRE_CHIPS_AFFICHEES">+{{selectedSpecialties.length - NOMBRE_CHIPS_AFFICHEES}}
       <span class="tooltiptext">{{getOverflowSpecialites()}}</span>

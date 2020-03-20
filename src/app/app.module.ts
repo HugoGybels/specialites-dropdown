@@ -12,6 +12,7 @@ import {TabViewModule} from 'primeng/tabview';
 
 import { AppComponent } from './app.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { NativeDropdownComponent } from './native-dropdown/native-dropdown.component';
 
 @NgModule({
   imports: [ 
@@ -24,7 +25,8 @@ import { DropdownComponent } from './dropdown/dropdown.component';
   ],
   declarations: [ 
     AppComponent,
-    DropdownComponent
+    DropdownComponent,
+    NativeDropdownComponent
  ],
   bootstrap:    [ AppComponent ]
 })

@@ -9,7 +9,7 @@ import { Specialty } from '../models/specialty.model';
 })
 export class DropdownComponent implements OnInit {
 
-
+  public NOMBRE_CHIPS_AFFICHEES = 3;
   public specialties: Specialty[];
   public selectedSpecialties: Specialty[];
 
@@ -33,7 +33,7 @@ export class DropdownComponent implements OnInit {
     }
 
     public getOverflowSpecialites(): string {
-        let tmp = this.selectedSpecialties.slice(5, this.selectedSpecialties.length);
+        let tmp = this.selectedSpecialties.slice(this.NOMBRE_CHIPS_AFFICHEES, this.selectedSpecialties.length);
         let tooltipText = '';
         if (tmp !== undefined) {
           tmp.forEach(s => tooltipText += s.libelle);

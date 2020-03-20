@@ -15,17 +15,17 @@ export class DropdownComponent implements OnInit {
 
   constructor() {
     this.specialites = [
-      new Specialite(1, 'CCFC Haut', ''),
-      new Specialite(2, 'CCFC Bas', ''),
-      new Specialite(3, 'CCFC T Haut', ''),
-      new Specialite(4, 'D contact sec', ''),
-      new Specialite(5, 'Bois Amiante', ''),
-      new Specialite(6, 'G1 > G3', ''),
-      new Specialite(7, 'G3 > G1', ''),
-      new Specialite(8, 'Silencieux', ''),
+      new Specialite(1, 'CCFC Haut', 'GRIP - CCFC Haut'),
+      new Specialite(2, 'CCFC Bas', 'GRIP - CCFC Bas'),
+      new Specialite(3, 'CCFC T Haut', 'GRIP - CCFC Très Haut'),
+      new Specialite(4, 'D contact sec', 'GRIP - TEMPO double contact sec'),
+      new Specialite(5, 'Bois Amiante', 'GRIP - CCPI bois amiante'),
+      new Specialite(6, 'G1 > G3', 'Changement technologie G1 > G3'),
+      new Specialite(7, 'G3 > G1', 'Changement technologie G3 > G1'),
+      new Specialite(8, 'Silencieux', 'C Silencieux'),
     ];
 
-    //this.selectedSpecialties = this.specialties;
+    this.specialitesSelectionnees = this.specialites;
     }
 
     public ngOnInit() { 

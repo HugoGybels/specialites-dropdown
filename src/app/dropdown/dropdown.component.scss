@@ -25,6 +25,12 @@
       border-radius: 999px;
       position: relative;
 
+      .close {
+        cursor: pointer;
+        margin-left: 5px;
+        font-size: .8rem;
+      }
+
       &.tooltip {
         overflow: visible;
 

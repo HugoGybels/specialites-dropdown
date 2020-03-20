@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Specialite } from '../models/specialite.model';
+import { Subject } from 'rxjs'
+import { debounceTime, map } from 'rxjs/operators';
 
 
 @Component({
@@ -8,6 +10,12 @@ import { Specialite } from '../models/specialite.model';
   styleUrls: ['./dropdown.component.scss']
 })
 export class DropdownComponent implements OnInit {
+
+  @Output()
+  public sendRequest = new EventEmitter<void>();
+
+  
+  public subject = new Subject<number>();
 
   public NOMBRE_CHIPS_AFFICHEES = 3;
   public specialites: Specialite[];
@@ -29,6 +37,10 @@ export class DropdownComponent implements OnInit {
     }
 
     public ngOnInit() { 
+      this.subject.pipe(
+        debounceTime(1000),
+        map(() => this.sendRequest.emit())
+      ).subscribe();
     }
 
     public getOverflowSpecialites(): string {
@@ -38,6 +50,11 @@ export class DropdownComponent implements OnInit {
           tmp.forEach(s => tooltipText += s.libelleCourt);
         }
         return tooltipText;
+    }
+
+    public removeSpecialite(specialite : Specialite) {
+      this.subject.next();
+      this.specialitesSelectionnees.splice(this.specialitesSelectionnees.indexOf(specialite), 1);
     }
 
 

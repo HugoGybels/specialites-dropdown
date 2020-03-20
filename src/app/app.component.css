@@ -1,3 +1,6 @@
 p {
-  font-family: Lato;
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  font-size: 5rem;
 }

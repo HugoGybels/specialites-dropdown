@@ -7,12 +7,15 @@
                   [filter]="false"
                   [displaySelectedLabel]="false"
                   defaultLabel="Choisissez une spécificité"
-                  [style]="{'white-space': 'nowrap'}">
+                  [style]="{'white-space': 'nowrap'}"
+                  (onChange)="subject.next()">
   </p-multiSelect>
 
   <div id="chips">
     <ng-container *ngFor="let spe of specialitesSelectionnees; let i = index">
-    <span class="chip" *ngIf="i < NOMBRE_CHIPS_AFFICHEES">{{spe.libelleCourt}}</span>
+    <span class="chip" *ngIf="i < NOMBRE_CHIPS_AFFICHEES">
+      {{spe.libelleCourt}}
+      <span class="close" (click)="removeSpecialite(spe)">x</span></span>
     <span class="chip tooltip" *ngIf="i===NOMBRE_CHIPS_AFFICHEES">+{{specialitesSelectionnees.length - NOMBRE_CHIPS_AFFICHEES}}
       <span class="tooltiptext">{{getOverflowSpecialites()}}</span>
     </span>
